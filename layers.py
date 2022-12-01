@@ -1,3 +1,4 @@
+""" Adopted from https://github.com/skepsun/SAGN_with_SLE repo """
 import torch
 from torch import nn
 import math

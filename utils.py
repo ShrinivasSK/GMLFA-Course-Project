@@ -7,6 +7,7 @@ import torch.nn.functional as F
 
 eps = 1e-9
 
+""" Standard Function to make the training deterministic """
 def seed(seed=0):
     random.seed(seed)
     np.random.seed(seed)
@@ -26,6 +27,7 @@ def get_n_params(model):
         pp += nn
     return pp
 
+""" Adopted from https://github.com/skepsun/SAGN_with_SLE repo for the preprocessing step"""
 def outer_distance(y1, y2, train_mask):
     y1[y1 == 0] = eps
     y2[y2 == 0] = eps

@@ -1,3 +1,4 @@
+""" Adopted and Modified from https://github.com/skepsun/SAGN_with_SLE repo """
 import dgl.function as fn
 import numpy as np
 import torch
@@ -5,6 +6,7 @@ import torch
 from dataset import load_dataset
 from utils import (inner_distance, outer_distance)
 
+""" Adopted from the Github Repo """
 def neighbor_average_features(g, feat, args):
     ##############################################
     ## Compute multi-hop neighbor-averaged node features
@@ -34,6 +36,7 @@ def neighbor_average_features(g, feat, args):
     
     return res
 
+""" Modified by us to remove the SLE component """
 def prepare_data(device, args):
     ####################################################
     ## Load dataset and compute neighbor-averaged node features used by scalable GNN model

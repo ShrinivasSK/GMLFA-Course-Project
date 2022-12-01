@@ -12,6 +12,11 @@ from utils import get_n_params, seed
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+""" 
+Modified the original code to remove the SLE component and follow the stage wise training required with RLU. 
+Followed the Standard Training Protocols
+    - Saving Metrics, Initialising Model, Dataloaders, Loss Func, Optimiser, Saving best results, etc
+"""
 def run(args, data, device):
     ############### Saving Metrics #################
     best_epoch=0
@@ -106,7 +111,7 @@ def main(args):
     print("Val Accuracy: ",val_acc)
     print("Val Loss: ",val_loss)
 
-
+""" Adopted from https://github.com/skepsun/SAGN_with_SLE repo """
 def define_parser():
     parser = argparse.ArgumentParser(description="Scalable Adaptive Graph neural Networks with Self-Label-Enhance")
 

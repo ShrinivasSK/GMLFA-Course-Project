@@ -1,3 +1,4 @@
+""" Adopted and Modified from https://github.com/skepsun/SAGN_with_SLE repo """
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -58,6 +59,10 @@ class SAGN(nn.Module):
         self.post_encoder.reset_parameters()
         self.bn.reset_parameters()
 
+    """ 
+        Modified the original code 
+        Simplified the existing SAGN model to use only attention weights
+    """
     def forward(self, feats):
         out = 0
         
